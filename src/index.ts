@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { AppDataSource } from "./data-source";
-import { clients } from "./entity/clients"; // Assumant que la classe a été renommée en 'Client'
+import { clients } from "./entity/clients"; 
 
 AppDataSource.initialize().then(async () => {
     console.log("Inserting a new user into the database...");
@@ -18,7 +18,7 @@ AppDataSource.initialize().then(async () => {
     console.log("Saved a new user with id: " + user.id);
 
     console.log("Loading users from the database...");
-    const users = await AppDataSource.manager.find(clients); // Utilisation de 'Client' si la classe a été renommée
+    const users = await AppDataSource.manager.find(clients); 
     console.log("Loaded users: ", users);
 
     console.log("Here you can setup and run express / fastify / any other framework.");
